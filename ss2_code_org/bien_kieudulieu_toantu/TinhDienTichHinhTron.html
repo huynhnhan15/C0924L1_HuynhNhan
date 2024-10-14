@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diện tích hình tròn</title>
+</head>
+
+<body>
+<label>Nhập Bán Kính</label>
+<input type="text" id="number">
+<button onclick="tinhdientich()">Tính diện tích</button>
+<script>
+  function tinhdientich(){
+    let number = parseFloat(document.getElementById('number').value);
+    let dientich = number*number* 3.14;
+
+    alert("Diện tích hình tròn là:"+dientich);
+  }
+</script>
+</body>
+</html>

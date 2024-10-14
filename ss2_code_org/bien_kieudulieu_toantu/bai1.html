@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<label>Điểm toán</label>
+<input type="text" id="toan">
+<label>Điểm hóa</label>
+<input type="text" id="hoa">
+<label>Điểm lý</label>
+<input type="text" id="ly">
+<button onclick="diemtrungbinh()" >Tính điểm trung bình </button>
+<button onclick="diemtong()" >Tính điểm tổng </button>
+
+
+
+<script>
+   function diemtrungbinh() {
+       let toan = parseFloat(document.getElementById('toan').value);
+       let ly = parseFloat(document.getElementById('ly').value);
+       let hoa = parseFloat(document.getElementById('hoa').value);
+       let trungbinh = (toan + ly + hoa)/3;
+
+        alert("trung bình điểm" + trungbinh );
+
+
+   }
+   function diemtong() {
+       let toan = parseFloat(document.getElementById('toan').value);
+       let ly = parseFloat(document.getElementById('ly').value);
+       let hoa = parseFloat(document.getElementById('hoa').value);
+       let tong = toan + hoa + ly;
+       alert("trung bình điểm" + tong);
+   }
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>máy tính</title>
+</head>
+<body>
+<input type="text" id="number1">
+<input type="text" id="number2">
+<button onclick="tong()">cộng</button>
+<button onclick="tru()">Trừ</button>
+<button onclick="nhan()">Nhân</button>
+<button onclick="chia()">Chia</button>
+
+
+
+
+<script>
+    function tong(){
+        let number1 = parseFloat(document.getElementById('number1').value);
+        let number2 = parseFloat(document.getElementById('number2').value);
+        let tong = number1 + number2;
+        alert("Kết quả:"+ tong);
+    }
+    function tru(){
+        let number1 = parseFloat(document.getElementById('number1').value);
+        let number2 = parseFloat(document.getElementById('number2').value);
+        let tru = number1 - number2;
+        alert("Kết quả:"+ tru);
+    }
+    function nhan(){
+        let number1 = parseFloat(document.getElementById('number1').value);
+        let number2 = parseFloat(document.getElementById('number2').value);
+        let nhan = number1 * number2;
+        alert("Kết quả:"+ nhan);
+    }
+    function chia(){
+        let number1 = parseFloat(document.getElementById('number1').value);
+        let number2 = parseFloat(document.getElementById('number2').value);
+        let chia = number1/number2;
+        alert("Kết quả:"+ chia);
+    }
+
+</script>
+</body>
+</html>

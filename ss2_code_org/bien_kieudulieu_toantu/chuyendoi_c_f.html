@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chyển đổi 0C  sang 0F</title>
+</head>
+<body>
+<label>Nhập Nhiệt độ</label>
+<input type="text" id="number">
+<button onclick="chuyendoi()">Chuyển đổi</button>
+<script>
+  function chuyendoi(){
+    let number = parseFloat(document.getElementById('number').value);
+    let F = (9*number/5)+ 32;
+    alert("Độ F =" +F);
+  }
+
+
+</script>
+</body>
+</html>
