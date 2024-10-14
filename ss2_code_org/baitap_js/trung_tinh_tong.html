@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Điểm trung bình 3 môn toán lý hóa</title>
+</head>
+<body>
+<label>điểm toán</label>
+<input type="text" id="toan">
+<label>điểm lý</label>
+<input type="text" id="ly">
+
+<label>điểm hóa</label>
+<input type="text" id="hoa">
+<button onclick="tinhdiemtrungbinh()">Tính</button>
+
+<script>
+ function tinhdiemtrungbinh(){
+     let toan = parseFloat(document.getElementById(`toan`).value);
+     let ly = parseFloat(document.getElementById(`ly`).value);
+     let hoa = parseFloat(document.getElementById(`hoa`).value);
+
+
+     let diemtrungbinh = ((toan + ly + hoa )/ 3);
+     alert("Điểm trung bình 3 môn là:" + diemtrungbinh);
+ }
+
+</script>
+</body>
+</html>
