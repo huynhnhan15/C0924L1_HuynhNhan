@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>Nhập tuổi của một người</label>
+<input type="number" id="tuoi" step="1">
+<button onclick="kiemtra()">Kiểm Tra</button>
+<script>
+    function kiemtra(){
+        let tuoi = parseFloat(document.getElementById('tuoi').value);
+        let kiemtra = parseInt(document.getElementById('tuoi').value);
+        if(tuoi != kiemtra){
+            alert("Vui lòng nhập tuổi chính xác: ");
+        }else if( tuoi >0 && tuoi <= 120){
+            alert("Chính xác " + tuoi);
+        }else {
+            alert("Vui lòng nhập tuổi chính xác: ");
+        }
+
+    }
+</script>
+</body>
+</html>

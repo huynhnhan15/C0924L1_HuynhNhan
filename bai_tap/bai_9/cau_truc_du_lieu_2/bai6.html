@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Giải phương trình bậc 1  ax + b = 0</h1>
+<label>Nhập Số a</label>
+<label for="number1"></label><input type="text" id="number1">
+<label>Nhập Số b</label>
+<label for="number2"></label><input type="text" id="number2">
+<button onclick="tinh()">Tính</button>
+<script>
+    function tinh(){
+        let a = document.getElementById('number1').value;
+        let b = document.getElementById('number2').value;
+        let x = -b/a;
+        alert("Kết quả x = "+ x);
+
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>Nhập Độ C</label>
+<input type="text" id="doC">
+<button onclick="chuyendoi()">Chuyển Đổi</button>
+<script>
+  function chuyendoi() {
+    let doC = parseFloat(document.getElementById('doC').value);
+    let doF = doC * 9 / 5 + 32;
+    alert("Độ F = " + doF);
+  }
+
+</script>
+</body>
+</html>

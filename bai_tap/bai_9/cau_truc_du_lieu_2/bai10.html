@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh Giá Điện</title>
+</head>
+<body>
+<label>Nhập  x(kWh) tiêu thụ điện </label>
+<label for="sodien"></label><input type="number" id="sodien">
+<button onclick="tinh()">Tính</button>
+<script>
+  function tinh(){
+    let sodien = document.getElementById('sodien').value;
+    let n = 5000;
+    let thanhtien = 0;
+    if(sodien < 0 ){
+      alert("Nhập Lại: ");
+    } else if(sodien <= 20){
+      thanhtien = sodien * n;
+      alert("số tiền phải trả; "+thanhtien)
+    }else if(sodien <= 50){
+      thanhtien = sodien * n * 0.2;
+      alert("số tiền phải trả; "+thanhtien)
+    } else {
+      thanhtien = sodien * n * 0.3;
+      alert("số tiền phải trả; "+thanhtien)
+    }
+  }
+</script>
+
+</body>
+</html>

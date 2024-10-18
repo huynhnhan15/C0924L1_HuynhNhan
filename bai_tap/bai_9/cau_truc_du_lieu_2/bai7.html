@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Giải phương trình bậc 2</h2>
+<label for="number1">Nhập a</label><input type="text" id="number1">
+<label for="number2">Nhập b</label><input type="text" id="number2">
+<label for="number3">Nhập c</label><input type="text" id="number3">
+<button onclick="tinh()">Tính</button>
+<script>
+  function tinh() {
+    let a = document.getElementById('number1').value;
+    let b = document.getElementById('number2').value;
+    let c = document.getElementById('number3').value;
+    if(a == 0 ){
+      alert("phương trình vô nghiệm ");
+    }
+    let x1;
+    let x2;
+    let delta = b*b - a*c;
+    if(delta < 0 ){
+      alert("Phương Trình vô nghiệm");
+    }else if(delta == 0){
+      x1 = x2 = -b/2*a;
+      alert("Phương trình có 2 nghiệm kép x1 = x2 = " + x1);
+    }else if(delta > 0 ) {
+      x1 =  (-b + Math.sqrt(delta)) / (2*a);
+      x2 = (-b - Math.sqrt(delta)) / (2*a);
+      alert("x1 ="+ x1 +"x2 = " + x2);
+    }
+
+
+  }
+</script>
+
+
+</body>
+</html>

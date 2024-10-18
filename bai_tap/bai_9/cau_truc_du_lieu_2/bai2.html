@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>Nhập m</label>
+<input type="text" id="met">
+<button onclick="chuyendoi()">Chuyển Đổi</button>
+<script>
+  function chuyendoi(){
+      let m = parseFloat(document.getElementById('met').value);
+      let ft = m * 3.2808;
+      alert("feet = "+ft);
+
+  }
+</script>
+</body>
+</html>

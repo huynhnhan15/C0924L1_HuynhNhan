@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1> Bài Tính Diện Tích Hình Vuông</h1>
+<label>Nhập Cạnh Hình Vuông</label>
+<input type="text" id="canh">
+<button onclick="tinh()">Tính</button>
+<div id="dientich"></div>
+<script>
+    function tinh(){
+        let  a = parseFloat(document.getElementById('canh').value);
+        let f = 0;
+        if( a > 0){
+            f = a * a;
+            alert("Diện tích hình vuông = " + f);
+            document.getElementById('canh').value = "";
+        }else {
+            alert(" vui lòng nhập lại");
+            document.getElementById('canh').value = "";
+        }
+
+
+    }
+</script>
+</body>
+</html>
