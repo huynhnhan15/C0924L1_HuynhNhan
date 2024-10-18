@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let danhso = +prompt("nhập danh số bán hàng: ");
+  let tienhoahong = 0;
+  let mut1= 100;
+  let mut2 = 500;
+  let mut3 = 1000;
+  if(danhso < mut1){
+    console.log("tiền hoa hồng nhận được là 0đ");
+  }else if(danhso < mut2){
+    tienhoahong = danhso * 0.1 ;
+    console.log("tiền hoa hồng nhận được là: " + tienhoahong);
+  }else if(danhso < mut3){
+    tienhoahong = danhso * 0.15;
+    console.log("tiền hoa hồng nhận được là: " + tienhoahong);
+  }else {
+    tienhoahong = danhso * 0.2;
+    console.log("tiền hoa hồng nhận được là " + tienhoahong);
+  }
+</script>
+</body>
+</html>

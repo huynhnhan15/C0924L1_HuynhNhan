@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Kiểm tra số ngày trong tháng</h1>
+<label> Chọn tháng</label>
+<input type="number" min="1" max="12" id="month">
+<button onclick="check()">Kiểm tra</button>
+<div id="ketqua"></div>
+<script>
+    function check(){
+        let month = document.getElementById("month").value;
+        switch (month) {
+            case "1":
+            case "3":
+            case "5":
+            case "7":
+            case "8":
+            case "10":
+            case "12":
+                alert("Tháng " + month + " có 31 ngày.");
+                document.getElementById("ketqua").innerHTML = "Tháng " + month + " có 31 ngày."
+                break;
+            case "2":
+                alert("Tháng" + month + "có 28 hoặc 29 ngày.");
+                document.getElementById("ketqua").innerHTML = "Tháng " + month + " có 28 hoặc 29 ngày."
+                break;
+            case "4":
+            case "6":
+            case "9":
+            case "11":
+                alert("Tháng " + month + " có 30 ngày.")
+                document.getElementById("ketqua").innerHTML = "Tháng " + month + " có 30 ngày."
+                break;
+        }
+    }
+
+</script>
+
+</body>
+</html>

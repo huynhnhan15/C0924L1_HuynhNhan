@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let diem1 = +prompt("nhập điểm kiểm tra: ");
+  let diem2 = +prompt("nhập điểm giữa kì: ");
+  let diem3 = +prompt("nhập điểm cuối kì: ");
+  let trungbinhdiem = (diem1 + diem2 * 2 + diem3 *3)/ 6;
+  if(trungbinhdiem >= 8){
+    console.log("học sinh giỏi: "+ trungbinhdiem);
+  }else if(trungbinhdiem>=7){
+    console.log("học sinh khá: " + trungbinhdiem);
+  }else if(trungbinhdiem>=5){
+    console.log("học sinh trrung bình: "+ trungbinhdiem);
+  }else {
+    console.log("học sinh yếu");
+  }
+  console.log("kết thúc chương trình: ")
+</script>
+</body>
+</html>
