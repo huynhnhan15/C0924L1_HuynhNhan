@@ -11,25 +11,25 @@
 <label for="number3">Nhập cạnh c</label><input type="number" id="number3">
 <button onclick="kiemtra()">Kiểm Tra</button>
 <script>
-  function kiemtra() {
-    let a = document.getElementById('number1').value;
-    let b = document.getElementById('number2').value;
-    let c = document.getElementById('number3').value;
-    if (a <= 0) {
-      alert("Nhập lại:" );
-    } else if (c <= 0) {
-      alert("Nhập lại:");
-    } else if (b <= 0) {
-      alert("Nhập lại:");
-    } else if (c > a + b) {
-      alert("Nhập lại:");
-    } else if (b > c + a) {
-      alert("Nhập lại:");
-    } else if (a > c + b) {
-      alert("Nhập lại:");
-    } else {
-      alert("đúng là tâm giác");
-    }
+    function kiemtra() {
+        let a = document.getElementById('number1').value;
+        let b = document.getElementById('number2').value;
+        let c = document.getElementById('number3').value;
+        if (a <= 0) {
+            alert("Nhập lại:");
+        } else if (c <= 0) {
+            alert("Nhập lại:");
+        } else if (b <= 0) {
+            alert("Nhập lại:");
+        } else if (c >= a + b) {
+            alert("Nhập lại:" + c);
+        } else if (b >= c + a) {
+            alert("Nhập lại:" + b);
+        } else if (a >= c + b) {
+            alert("Nhập lại:");
+        } else {
+            alert("đúng là tâm giác" + a);
+        }
 
   }
 </script>
