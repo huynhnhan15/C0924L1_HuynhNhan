@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let F;
+    F0 = 0;
+    F1 = 1;
+    tongF = F0 + F1;
+    let fibonacci = F0 + " " + F1 + " ";
+    for (let i = 2; i < 20; i++) {
+        F = F0 + F1;
+        F0 = F1;
+        F1 = F;
+        fibonacci += F + " ";
+        tongF +=F;
+    }
+    document.write(tongF);
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let phamvi = +prompt("Trò chơi đoán số ");
+    let nhapso = +prompt("Nhập vào: ");
+    let soRamdom;
+    if (phamvi) {
+        soRamdom = Math.floor(Math.random() * phamvi);
+        if (soRamdom == nhapso) {
+            alert("Bạn đã đoán đung");
+        } else {
+            while (soRamdom != nhapso) {
+                alert("đoán sai số đúng là " + soRamdom)
+                nhapso = +prompt("Nhập vào: ");
+            }
+            alert(" đoán đúng");
+        }
+    }
+</script>
+</body>
+</html>
