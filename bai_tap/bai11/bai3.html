@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="tamgiac1">
+<p id="tamgiac2"></p>
+<p id="tamgiac3"></p>
+<p id="tamgiac4"></p>
+
+<script>
+    let tamgiac1 = "";
+    for (let i = 5; i >= 1; i--) {
+        for (let j = 1; j <= i; j++) {
+            tamgiac1 += "*";
+        }
+        tamgiac1 += "<br>";
+    }
+    console.log(tamgiac1);
+    document.getElementById("tamgiac1").innerHTML = tamgiac1;
+    let tamgiac2 = "";
+    for (let i = 1; i <= 5; i++) {
+        for (let j = 1; j <= i; j++) {
+            tamgiac2 += "*";
+        }
+        tamgiac2 += "<br>";
+    }
+    console.log(tamgiac2);
+    document.getElementById("tamgiac2").innerHTML = tamgiac2;
+</script>
+</body>
+</html>

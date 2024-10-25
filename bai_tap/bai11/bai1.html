@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dãy Fibonacci</title>
+</head>
+<body>
+<script>
+    let number = +prompt("Bạn muốn in ra bao nhiêu số: ");
+
+    let F0 = 0, F1 = 1, Fn;
+    if (number >= 1) {
+        console.log(`Số thứ 0 là: ${F0}`);
+    } else if (number >= 2) {
+        console.log(`Số thứ 1 là: ${F1}`);
+    }
+    for (let i = 2; i < number; i++) {
+        Fn = F0 + F1;
+        console.log(`Số thứ ${i} là: ${Fn}`);
+        F0 = F1;
+        F1 = Fn;
+    }
+</script>
+</body>
+</html>

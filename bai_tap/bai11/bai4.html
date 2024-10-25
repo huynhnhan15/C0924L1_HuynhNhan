@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hình Chữ Nhật</title>
+</head>
+<body>
+<p id="hinhchunhat"></p>
+<script>
+  let chieuDai = 7;
+  let chieuRong = 5;
+  let draw = "";
+  for (let i = 1; i <= chieuDai; i++) {
+    draw += "*";
+  }
+  draw += "<br>";
+  for (let i = 1; i <= chieuRong - 2; i++) {
+    draw += "*";
+    for (let j = 1; j <= chieuDai - 2; j++) {
+      draw += "&nbsp;&nbsp;";
+    }
+    draw += "*<br>";
+  }
+  for (let i = 1; i <= chieuDai; i++) {
+    draw += "*";
+  }
+
+  document.getElementById('hinhchunhat').innerHTML = draw;
+</script>
+</body>
+</html>
