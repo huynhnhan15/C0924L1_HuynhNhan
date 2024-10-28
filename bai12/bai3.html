@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let n = +prompt("Nhập độ dài của mảng:");
+  let array = new Array(n);
+  for (let i = 0; i < array.length; i++) {
+    array[i] = +prompt("Nhập phần tử thứ: " + i); // Chuyển đổi thành số
+  }
+
+  let max = array[0]; // Khởi tạo max bằng phần tử đầu tiên
+  for (let i = 1; i < array.length; i++) { // Sửa lỗi vòng lặp
+    if (array[i] > max) {
+      max = array[i];
+    }
+  }
+  alert("Số lớn nhất là: " + max);
+
+  let sum = 0;
+  for (let i = 0; i < array.length; i++) { // Sửa lỗi vòng lặp
+    sum += array[i];
+  }
+  let trungbinh = sum / n;
+  console.log("Tổng các phần tử trong mảng: " + sum);
+  alert("Trung bình của mảng: " + trungbinh);
+</script>
+</body>
+</html>

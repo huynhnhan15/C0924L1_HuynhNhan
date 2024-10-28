@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="result"></p>
+<script>
+    let tableString = `<table border="1" style="border-collapse: collapse">`;
+    tableString +=`<tr>`
+    for (let i = 2;  i<=9; i++) {
+        tableString +=`<th>Bảng ${i}</th>`
+    }
+    tableString +=`</tr>`
+    for (let i = 1; i <=10 ; i++) {
+        tableString +=`  <tr>`;
+        for (let j = 2; j <=9 ; j++) {
+            tableString += ` <td>${j}x${i}=${i*j}</td>`
+        }
+        tableString += `</tr>`
+    }
+    tableString +=`</table>`
+    document.getElementById("result").innerHTML =tableString;
+</script>
+</body>
+</html>

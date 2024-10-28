@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mảng</title>
+</head>
+<body>
+<script>
+  let n = +prompt("Nhập độ dài của mảng:");
+  let array = new Array(n);
+
+  for (let i = 0; i < array.length; i++) {
+    array[i] = prompt("Nhập phần tử thứ: " + i);
+  }
+  let min = array[0];
+  let minIndex = 0;
+
+  for (let i = 1; i < array.length; i++) {
+    if (array[i] < min) {
+      min = array[i];
+      minIndex = i;
+    }
+  }
+  alert(`Phần tử nhỏ nhất là ${min} ở vị trí ${minIndex}`);
+</script>
+</body>
+</html>

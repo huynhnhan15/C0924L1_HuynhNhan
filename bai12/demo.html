@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // danh sách tên sinh viên, danh sách sản phẩm
+
+    // let student1 = "chánh";
+    // let student2 = "hải";
+    // let student3 = "tiến";
+    // // => dài dòng khó quản lý biến
+    // // => mảng
+    // // sử dụng dấu [] và các phàn tử cách bởi  đấu ,
+    // let students  = ["chánh", "hải", "tiến"];
+    // let numbers = [1,4,6,7];
+    // let cars = new Array("Honda", "Toyota","Huyndai");
+    // let cars2 = Array("Honda", "Toyota","Huyndai","vinFast");
+    //
+    // let product =[1,"sam sung",2000,1000,true];
+    // //
+    // console.log(cars[1]);//
+    //
+    // console.log(cars2); // in mảng
+    //
+    // //dùng for để duyệt mảng để in ra
+    // for (let i = 0; i <cars2.length ; i++) {
+    //     cars2[i] = "VN-"+ cars2[i];
+    //     console.log("Phần tử thứ :" +i + ":"+ cars2[i]);
+    // }
+    //
+    // // dùng for duyệt ngược mảng
+    // for (let i = cars2.length-1; 0<=i ; i--) {
+    //     cars2[i] = "VN-"+ cars2[i];
+    //     console.log("Phần tử thứ :" +i + ":"+ cars2[i]);
+    // }
+    // // duyệt tại vị trí bất kỳ => chi in ra nửa mảng cars2 sau
+    //
+    // for (let i = cars2.length/2; i<cars2.length ; i++) {
+    //     cars2[i] = "VN-"+ cars2[i];
+    //     console.log("Phần tử thứ :" +i + ":"+ cars2[i]);
+    // }
+
+    // sử dung for of để hiển thị danh sách car
+    // for(let car of cars2){
+    //     car += "VN: "+ car;
+    // }
+    //
+    // for (const car of cars2) {
+    //     console.log(car);
+    // }
+    // sử dụng vòng lặpf for-in để lấy ra index
+
+    // for (let index in cars2 ){
+    //     console.log(index);
+    // }
+
+    // cho mảng số nguyên bất kỳ
+
+    // nhập mảng từ bàn phím
+    let  n = +prompt("nhập độ dài của mảng")
+
+    let array = new Array(n); // mảng có 5 phần tử
+    // let array = []; // mảng có 5 phần tử
+    // nhập phần tử cho mảng;
+    for (let i = 0; i <array.length; i++) {
+        array[i] =+ prompt("nhập phần tử thứ : "+ i);
+    }
+
+    // 5 phần tử
+    // for (let i = 0; i <n; i++) {
+    //     array.push(+prompt("nhập phần tử thứ : "+ i));
+    // }
+    alert(array);
+
+
+    // tìm ra phần tử lớn nhất của mảng;
+    let max = array[0];
+    for (let i = 1; i <array.length ; i++) {
+        if (max<array[i]){
+            max = array[i];
+        }
+    }
+    console.log(max);
+    let a = [1,3,4];
+    let b = [1,31,4];
+
+
+
+</script>
+</body>
+</html>

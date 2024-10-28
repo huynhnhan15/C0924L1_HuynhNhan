@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  // kiểm tra một số n bất kỳ có phải là số nguyên tố hay không?
+
+  // let n = + prompt("nhập vào số nguyên dương ");
+  // let count = 0;
+  // for (let i = 2; i <n ; i++) {
+  //     if (n%i==0){
+  //         count ++;
+  //     }
+  // }
+  // if (count==0){
+  //     alert(n + " là số nguyên tố");
+  // }else {
+  //     alert(n + " không phải là số nguyên tố");
+  // }
+  // In ra 20 số nguyên tố đầu tiên trong dãy số tự nhiên;
+  // => dùng vòng lặp lăpj qua lần lượt từ 1 đến n => vòng lặp kết thúc khi đếm đủ 20 só nguyên tố
+
+  let countSNT =0;// đếm số nguyên tố
+  let number =2;
+  let n = +prompt("nhập số lượng snt cần in ra");
+  // cách 1:
+  while (countSNT<n){
+    // kiểm ra number có phải là ố nguyên tố hay không?
+    let count = 0; // ước của number
+    for (let i = 2; i <=Math.sqrt(number) ; i++) {
+      if (number%i==0){
+        count ++;
+      }
+    }
+    // nếu không có ước nào thì là snt
+    if (count==0) {
+      countSNT++;
+      console.log(number)
+    }
+    number++;
+  }
+
+  // cách 2:
+  // while (countSNT<n){
+  //     let flag = true;// mặc định là số nguyên tố
+  //     for (let i = 2; i <=Math.sqrt(number) ; i++) {
+  //         if (number%i==0){
+  //             flag= false;
+  //             break;
+  //         }
+  //     }
+  //     if (flag){
+  //         console.log(number);
+  //         countSNT++;
+  //     }
+  //     number++;
+  // }
+
+  // cách 3: sử dụng hàm
+  // in ra các số nguyên tố
+
+  //  while (countSNT<n){
+  //      if (isPrime(number)){
+  //          console.log(number);
+  //          countSNT++;
+  //      }
+  //      number++;
+  //  }
+  // // tạo hàm kiểm tra số nguyên tố;
+  //  function isPrime(number) {
+  //      if (number<2){
+  //          return false;
+  //      }else {
+  //          for (let i = 2; i <=Math.sqrt(number) ; i++) {
+  //              if (number%i==0){
+  //                  return false;
+  //              }
+  //          }
+  //      }
+  //      return true;
+  //  }
+</script>
+</body>
+</html>

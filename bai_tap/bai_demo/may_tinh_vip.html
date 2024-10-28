@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<table>
+  <tr>
+    <td colspan="4"><input id="window"></td>
+  </tr>
+  <tr>
+    <td><button id="1" onclick="append(this.textContent)">1</button></td>
+    <td><button onclick="append(this.textContent)">2</button></td>
+    <td><button onclick="append(this.textContent)">3</button></td>
+    <td><button onclick="append(this.textContent)">+</button></td>
+  </tr>
+  <tr>
+    <td><button onclick="append(this.textContent)">4</button></td>
+    <td><button onclick="append(this.textContent)" >5</button></td>
+    <td><button onclick="append(this.textContent)">6</button></td>
+    <td><button onclick="append(this.textContent)">-</button></td>
+  </tr>
+  <tr>
+    <td><button onclick="append(this.textContent)">7</button></td>
+    <td><button onclick="append(this.textContent)">8</button></td>
+    <td><button onclick="append(this.textContent)">9</button></td>
+    <td><button onclick="append(this.textContent)">x</button></td>
+  </tr>
+  <tr>
+    <td><button onclick="clear1()">C</button></td>
+    <td><button onclick="append(this.textContent)">0</button></td>
+    <td><button onclick="calculator()">=</button></td>
+    <td><button onclick="append(this.textContent)">/</button></td>
+
+  </tr>
+</table>
+<script>
+
+  function append(char) {
+    if (char==="x"){
+      document.getElementById("window").value +="*";
+    }else {
+      document.getElementById("window").value +=char;
+    }
+  }
+  function calculator() {
+    let express = document.getElementById("window").value;
+    let result = eval(express);
+    document.getElementById("window").value= result;
+  }
+  function clear1() {
+    document.getElementById("window").value="";
+  }
+</script>
+</body>
+</html>

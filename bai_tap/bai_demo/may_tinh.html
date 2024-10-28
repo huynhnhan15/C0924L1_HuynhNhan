@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td colspan="4"><input id="window"></td>
+    </tr>
+    <tr>
+        <td><button onclick="addOne()">1</button></td>
+        <td><button onclick="addTwo()">2</button></td>
+        <td><button onclick="addThree()">3</button></td>
+        <td><button onclick="addAdd()">+</button></td>
+    </tr>
+    <tr>
+        <td><button>4</button></td>
+        <td><button>5</button></td>
+        <td><button>6</button></td>
+        <td><button>-</button></td>
+    </tr>
+    <tr>
+        <td><button>7</button></td>
+        <td><button>8</button></td>
+        <td><button>9</button></td>
+        <td><button>x</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="clear1()">C</button></td>
+        <td><button>0</button></td>
+        <td><button onclick="calculator()">=</button></td>
+        <td><button>/</button></td>
+    </tr>
+</table>
+<script>
+
+    function addOne() {
+        document.getElementById("window").value +=1;
+    }
+    function addTwo() {
+        document.getElementById("window").value +=2;
+    }
+    function addThree() {
+        document.getElementById("window").value +=3;
+    }
+    function addAdd() {
+        document.getElementById("window").value +="+";
+    }
+    function calculator() {
+        let express = document.getElementById("window").value;
+        let result = eval(express);
+        document.getElementById("window").value= result;
+    }
+    function clear1() {
+        document.getElementById("window").value="";
+    }
+</script>
+</body>
+</html>
