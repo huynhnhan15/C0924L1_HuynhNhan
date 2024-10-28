@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="result"></p>
+<script>
+    let n = 10;
+    let array = new Array(n);
+    for (let i = 0; i < array.length; i++) {
+        array[i] = +prompt("Nhập phần tử thứ " + i + ":");
+    }
+    let V = +prompt("Nhập phần tử số nguyên V:");
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] == V) {
+            document.getElementById('result').innerText = V + " is in the array";
+        } else {
+            document.getElementById('result').innerText = V + " is not in the array";
+        }
+    }
+</script>
+</body>
+</html>

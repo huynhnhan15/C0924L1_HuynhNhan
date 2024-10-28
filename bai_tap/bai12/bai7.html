@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Kiểm Tra và Xóa Phần Tử Trong Mảng</title>
+</head>
+<body>
+<h2>Kiểm Tra và Xóa Phần Tử Trong Mảng Số Nguyên</h2>
+<p id="result"></p>
+
+<script>
+  let n = 10;
+  let array = new Array(n);
+
+  for (let i = 0; i < array.length; i++) {
+    array[i] = +prompt("Nhập phần tử thứ " + i + ":");
+  }
+
+  let V = +prompt("Nhập phần tử số nguyên V:");
+  let found = false;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === V) {
+      found = true;
+      for (let j = i; j < array.length - 1; j++) {
+        array[j] = array[j + 1];
+      }
+      array[array.length - 1] = 0;
+      break;
+    }
+  }
+
+  if (found) {
+    document.getElementById('result').innerText = `Mảng sau khi xóa ${V}: ${array.join(', ')}`;
+  } else {
+    document.getElementById('result').innerText = `${V} không có trong mảng.`;
+  }
+</script>
+</body>
+</html>
