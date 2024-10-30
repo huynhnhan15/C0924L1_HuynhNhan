@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let array1 = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe và Regulus'];
+  let array2 = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major và Leo'];
+  let star = prompt("Nhâp vào sao");
+
+
+  function checkStar(star) {
+
+    for (let i = 0; i < star.length; i++) {
+      if (array1[i] === star) {
+        return array2[i];
+
+      }
+    }
+    return "không tìm thấy chòm sao";
+  }
+
+  document.write("chòm sao tương ứng: " + checkStar(star));
+</script>
+</body>
+</html>
