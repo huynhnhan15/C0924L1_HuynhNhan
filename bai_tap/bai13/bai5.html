@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let nA = +prompt("Nhập độ dài của mảng A:");
+    let nB = +prompt("Nhập độ dài của mảng B:");
+
+
+    let arrayA = new Array(nA);
+    for (let i = 0; i < arrayA.length; i++) {
+        arrayA[i] = +prompt("Nhập phần tử thứ " + i + " của mảng A:");
+    }
+
+    let arrayB = new Array(nB);
+    for (let i = 0; i < arrayB.length; i++) {
+        arrayB[i] = +prompt("Nhập phần tử thứ " + i + " của mảng B:");
+    }
+    let kiemtra = false;
+    for (let i = 0; i < arrayA.length; i++) {
+        for (let j = 0; j < arrayB.length; j++) {
+            if (arrayA[i] === arrayB[j]) {
+                kiemtra = true;
+            }
+        }
+    }
+    if (kiemtra) {
+        console.log("hai mang bẳng nhau");
+    } else {
+        console.log("hai mang khac nhau");
+    }
+</script>
+</body>
+</html>

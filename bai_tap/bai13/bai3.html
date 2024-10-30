@@ -12,10 +12,17 @@
     for (let i = 0; i < array.length; i++) {
         array[i] = prompt("Nhập phần tử thứ: " + i);
     }
-    let reversedArray = array.reverse();
-    for (let i = 0; i < reversedArray.length; i++) {
-        console.log("Phần tử thứ: " + i + " = " + reversedArray[i]);
+
+    let dem = 0;
+    for (let i = 0; i < array.length; i++) {
+        if(array[i] % 2 ==0 || array[i] % 2 == 1){
+            console.log("các số trong mảng: " + array[i]);
+        }else {
+            dem++
+        }
+
     }
+    console.log("tổng các kí tự trong mảng:" + dem);
 </script>
 </body>
 </html>

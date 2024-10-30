@@ -9,7 +9,7 @@
 <p id="result"></p>
 
 <script>
-  let n = 10;
+  let n = 5;
   let array = new Array(n);
 
   for (let i = 0; i < array.length; i++) {
@@ -24,8 +24,9 @@
       for (let j = i; j < array.length - 1; j++) {
         array[j] = array[j + 1];
       }
+      i--;
       array[array.length - 1] = 0;
-      break;
+
     }
   }
 

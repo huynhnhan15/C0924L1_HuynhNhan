@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Gộp Hai Mảng</title>
+</head>
+<body>
+<h2>Gộp Hai Mảng Số Nguyên</h2>
+<p id="result"></p>
+
+<script>
+
+  let nA = +prompt("Nhập độ dài của mảng A:");
+  let nB = +prompt("Nhập độ dài của mảng B:");
+
+
+  let arrayA = new Array(nA);
+  for (let i = 0; i < arrayA.length; i++) {
+    arrayA[i] = +prompt("Nhập phần tử thứ " + i + " của mảng A:");
+  }
+
+  let arrayB = new Array(nB);
+  for (let i = 0; i < arrayB.length; i++) {
+    arrayB[i] = +prompt("Nhập phần tử thứ " + i + " của mảng B:");
+  }
+
+  let mergedArray = new Array(nA + nB);
+  for (let i = 0; i < nA; i++) {
+    mergedArray[i] = arrayA[i];
+  }
+  for (let i = 0; i < nB; i++) {
+    mergedArray[nA + i] = arrayB[i];
+  }
+
+  document.getElementById('result').innerText = `Mảng sau khi gộp: ${mergedArray.join(', ')}`;
+</script>
+</body>
+</html>

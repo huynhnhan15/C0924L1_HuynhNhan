@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   let array = ' hello tat ca moi nguoi';
+    let  dem = 0;
+    for (let i = 0; i < array.length; i++) {
+        if(array[i] !== " " && (array[i + 1] === " " || i + 1 === array.length)){
+            dem++;
+        }
+
+    }
+    document.write("Số từ trong chuỗi là: " + dem);
+</script>
+</body>
+</html>

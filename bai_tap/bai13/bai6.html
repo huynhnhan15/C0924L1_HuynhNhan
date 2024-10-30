@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let n = +prompt("Nhập vào mảng: ");
+  let array = new Array(n);
+
+  for (let i = 0; i < array.length; i++) {
+    array[i] = prompt("Nhập phần tử thứ: " + i);
+  }
+  for (let i = 0; i < array.length; i++) {
+    if(array[i] === "-"){
+      array[i] ="_";
+    }
+  }
+  console.log(array);
+</script>
+</body>
+</html>
