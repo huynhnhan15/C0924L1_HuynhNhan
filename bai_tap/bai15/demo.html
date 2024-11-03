@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tham trị //  tham chiếu</title>
+</head>
+<body>
+<script>
+    // tham trị: truyền  kiểu dữ liệu nguyên thủy
+    let b = 10 ;
+    changeq(b);
+    console.log("ngoài hàm: " + b);
+ function changeq(a) {
+     a++;
+     console.log(a);
+ }
+ // tham  chiếu: array( kiểu dữ liệu là đối tượng/ tham chiếu) => tham chiếu
+  let mang = [1,2];
+ change2(mang);
+    console.log("ngoài hàm; " + mang);
+ function change2(arr){
+     arr[0] = 100;
+     arr[1] = 200;
+     console.log("arr trong hàm: " + arr);
+ }
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>Nhập vào số bất kì</label>
+<input id="number">
+<button onclick="giaiThua()">Tính giai thừa</button>
+<script>
+  function giaiThua(){
+    let number = +parseInt(document.getElementById("number").value);
+    let a = 1;
+    for (let i = 1; i <= number; i++) {
+      a *= i;
+    }
+    alert(a);
+  }
+</script>
+</body>
+</html>

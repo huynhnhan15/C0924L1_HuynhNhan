@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="number">
+<label>Nhập vào số</label>
+<button onclick="tinhBinhPhuong()">Tính bình phương</button>
+<p id="ketqua"></p>
+<script>
+    function tinhBinhPhuong(){
+        let a = parseInt(document.getElementById('number').value);
+        let binhPhuong = a*a;
+        alert("Kết quả: " + binhPhuong);
+    }
+</script>
+</body>
+</html>

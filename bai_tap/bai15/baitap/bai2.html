@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<label>Nhập bán kính </label>
+<label for="number1"></label><input id="number1"> <br>
+<button onclick="dienTich()">Tính diện Tích</button>
+<br>
+<button onclick="chuVi()">Tính chu vi</button>
+<br>
+<script>
+    function dienTich() {
+        let a = parseInt(document.getElementById("number1").value);
+
+        let S = a * a * 3.14;
+        alert("Diện tích là: " + S);
+
+    }
+
+    function chuVi() {
+        let a = parseInt(document.getElementById("number1").value);
+        let C = a * 3.14;
+        alert("Diện tích là: " + C);
+
+    }
+</script>
+<body>

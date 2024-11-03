@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<input id="product" placeholder="Nhập tên sản phẩm ">
+<button onclick="addNew()">Thêm mới</button><br>
+<span>Số lượng sản phầm : </span><span id="soLuong"></span>
+<p id="result"></p>
+<script>
+  // CRUD :
+  // c: create => thêm mới
+  // R : read : đọc => hiển thị danh sách
+  // U: update : cập nhật
+  // : D => delete => xoá
+  let productList = ["sam sung", "nokia", "iphone", "LG","HTC"];
+  display();
+  // them
+  function addNew() {
+    let newProduct = document.getElementById("product").value;
+    if (newProduct!=''){
+      productList.push(newProduct);
+    }else {
+      alert("yêu cầu nhập tên sản phẩm")
+    }
+    document.getElementById("product").value='';
+    display();
+  }
+  function display() {
+    let tableString =`<table border="1" style="border-collapse: collapse">
+                            <tr>
+                                <th>STT</th>
+                                <th>Tên sản phẩm</th>
+                                <th>Chình sửa</th>
+                                <th>Xoá</th>
+                            </tr>`;
+    for (let i = 0; i <productList.length ; i++) {
+      tableString +=`
+                             <tr>
+                                <td>${i+1}</td>
+                                <td>${productList[i]}</td>
+
+                                <td><button onclick="updateProduct(${i})">Chỉnh sửa</button></td>
+                                <td><button onclick="deleteProduct(${i})">Xoá</button></td>
+                            </tr>
+             `;
+    }
+
+    tableString +=`</table>`
+    document.getElementById('result').innerHTML =tableString;
+    document.getElementById('soLuong').innerText =productList.length;
+
+  }
+  // xoa
+  function deleteProduct(index) {
+    let conf = confirm("bạn có muốn xoá sản phẩm :"+productList[index] +"???");
+    if (conf){
+      productList.splice(index,1);
+    }
+    display();
+
+  }
+  // sua
+
+  function updateProduct(index) {
+    let newProduct = prompt("nhập tên mới");
+    productList[index] = newProduct;
+    display();
+
+  }
+
+</script>
+</body>
+</html>

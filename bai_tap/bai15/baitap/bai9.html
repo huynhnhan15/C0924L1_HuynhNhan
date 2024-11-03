@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let arr = ['a','b','c','a','c','d','a'];
+  let M = prompt("nhập vào kí tự bất kì");
+
+ let m = kiemTra(arr,M);
+  console.log("số lần xuất hiện:"+ m);
+
+  function kiemTra(array, n){
+    let dem = 0;
+    for (let i = 0; i < array.length ; i++) {
+      if( n == array[i]){
+        dem++;
+
+      }else {
+        return -1;
+      }
+    }
+  }
+</script>
+
+</body>
+</html>
