@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản Lý Sản Phẩm</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input, button {
+            padding: 8px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width:      50px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        table {
+            width: 100%;
+            max-width: 700px;
+            border-collapse: collapse;
+            overflow-x: auto;
+            display: block;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            word-break: break-word;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        #soLuong {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<input id="product" placeholder="Nhập tên sản phẩm">
+<button onclick="addNew()">Thêm mới</button><br>
+<span>Số lượng sản phẩm: </span><span id="soLuong"></span>
+<p id="result"></p>
+<script>
+    // CRUD :
+    // C: Create => thêm mới
+    // R: Read => đọc => hiển thị danh sách
+    // U: Update => cập nhật
+    // D: Delete => xoá
+    let productList = ["Sam sung", "Nokia", "iPhone", "LG", "HTC"];
+    display();
+
+    // Thêm mới
+    function addNew() {
+        let newProduct = document.getElementById("product").value;
+        if (newProduct != '') {
+            productList.push(newProduct);
+        } else {
+            alert("Yêu cầu nhập tên sản phẩm");
+        }
+        document.getElementById("product").value = '';
+        display();
+    }
+
+    function display() {
+        let tableString = `<table>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Tên sản phẩm</th>
+                                    <th>Chỉnh sửa</th>
+                                    <th>Xoá</th>
+                                </tr>`;
+        for (let i = 0; i < productList.length; i++) {
+            tableString += `
+                                <tr>
+                                    <td>${i + 1}</td>
+                                    <td>${productList[i]}</td>
+                                    <td><button onclick="updateProduct(${i})">Chỉnh sửa</button></td>
+                                    <td><button onclick="deleteProduct(${i})">Xoá</button></td>
+                                </tr>`;
+        }
+        tableString += `</table>`;
+        document.getElementById('result').innerHTML = tableString;
+        document.getElementById('soLuong').innerText = productList.length;
+    }
+
+    // Xoá
+    function deleteProduct(index) {
+        let conf = confirm("Bạn có muốn xoá sản phẩm: " + productList[index] + "???");
+        if (conf) {
+            productList.splice(index, 1);
+        }
+        display();
+    }
+
+    // Chỉnh sửa
+    function updateProduct(index) {
+        let newProduct = prompt("Nhập tên mới");
+        productList[index] = newProduct;
+        display();
+    }
+</script>
+</body>
+</html>
