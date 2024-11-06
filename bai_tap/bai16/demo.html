@@ -1,0 +1,68 @@
+chu<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lập trình hướng đối tượng</title>
+</head>
+<body>
+<script>
+    // lập trình hướng đối tợng OOP
+    // OOP: Object Oriented Programming =>  lập trình hướng đối tượng
+    // Khái niệm: ánh xạ các đối tượng ngoài thực tế vào trong lập trình
+    // Đối tượng: bao gồm các thuộc tính  và hành vi của đối tượng
+    // ví dụ: 1 đối tượng student
+    // thuộc tính: tên, tuổi, lớp học,...
+    // hành vi: đi, học, làm bài tập
+    // khai báo một đối tượng trực tiếp  literal
+    let studen1 = {
+        // thuộc tính
+        id: 1,
+        name: "nhân",
+        age: 40,
+        // hành vi ( hành động) => phương thức (method)
+        study: function (subject) {
+            console.log("học viên đang học môn học " + subject);
+        },
+        howToGo: function () {
+            console.log("đi xe máy");
+        },
+    }
+    console.log(studen1.name);
+    studen1.study("toán");
+    studen1.howToGo();
+    // class: là một khung mẫu  quy định các đặt điểmm và hành vi chung cho một nhóm các đổi tượng.
+    // đặt tên theo quy tắc PascalCase
+
+    // sử dụng function
+    function SinhVien1(id, name, age) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.study = function (subject) {
+            console.log(" học viên đang học: " + subject)
+        }
+    }
+
+    // dùng từ class
+    class SinhVien {
+        // là một pmethod đẻ khai báo thuộc tính và khởi tạo đôi tượng
+        constructor(ma, ten, tuoi) {
+            this.id = ma;
+            this.name = ten;
+            this.age = tuoi;
+        }
+
+        study(subject) {
+            console.log("học viên đang học môn: " + subject);
+        }
+
+    }
+
+    let sv1 = new SinhVien(1, 'nhân', 21);
+    sv1.study("toán");
+    let sv2 = new SinhVien(2, 'nhân', 22);
+    let sv3 = new SinhVien(3, 'nhân', 23);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class HinhChuNhat {
+        constructor(chieudai, chieurong) {
+            this.chieudai = chieudai;
+            this.chieurong = chieurong;
+        }
+
+        getChieudai() {
+            return this.chieudai;
+        }
+
+        setChieudai(chieudai) {
+             this.chieudai = chieudai;
+        }
+
+        getChieurong() {
+            return this.chieurong;
+        }
+        setChieurong(chieurong){
+            this.chieurong = chieurong;
+        }
+
+        getDientich() {
+            return this.chieudai*this.chieurong
+        }
+
+
+        getChuvi() {
+            return (this.chieurong+this.chieudai)*2;
+        }
+
+    }
+    let chuNhat = new HinhChuNhat(10,20);
+    document.write("Chu vi hình chữ nhật là: " + chuNhat.getChuvi() + "<br>");
+    document.write("Diện tích hình chữ nhật là: " + chuNhat.getDientich());
+    document.write("<br><canvas id=\"canvasId\" width=width height=length style=\"border:1px solid violet;\"></canvas>")
+    let context = document.getElementById("canvasId").getContext("2d")
+</script>
+</body>
+</html>

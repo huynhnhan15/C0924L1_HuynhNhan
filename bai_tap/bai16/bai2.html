@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class NhietDo {
+        constructor(doC) {
+            this.doC = doC;
+        }
+        getDoC() {
+            return this.doC;
+        }
+        setDoc() {
+            this.doC = doC;
+        }
+        getChuyenDoF() {
+            return (this.doC * 9/5) + 32;
+        }
+        getChuyenDoK() {
+            return this.doC + 273.15;
+        }
+    }
+    let chuyenDoi = new NhietDo(25);
+    document.write("Độ F là: " + chuyenDoi.getChuyenDoF() + "<br>");
+    document.write("Độ K là: " + chuyenDoi.getChuyenDoK());
+</script>
+
+</body>
+</html>

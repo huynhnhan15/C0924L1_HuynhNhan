@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Animal{
+        constructor(name, weight, spead) {
+            this.name = name;
+            this.weight = weight;
+            this.spead = spead;
+        }
+        setName(name){
+            this.name = name;
+        }
+        getName(){
+            return this.name;
+        }
+        // phương thức trừu tượng => không có phần thân;
+        say(text){
+
+        }
+    }
+
+    class Rat extends Animal{
+        constructor(name, weight, spead, status) {
+            super(name, weight, spead);
+            this.status = status;
+        }
+        // ghi đè phương thức
+        say(text){
+            console.log("chit chit"+text);
+        }
+    }
+    class Cat extends Animal{
+        constructor(name, weight, spead) {
+            super(name, weight, spead,);
+        }
+        say(text) {
+            console.log("meo meo" + text)
+        }
+        eat(chuot){
+            if(chuot.status == true){
+                this.say("còn sống ăn thôi__")
+                this.weight += chuot.weight;
+            }else {
+                this.say("chết rồi không thèm ăn");
+            }
+        }
+        catch(chuot){
+            if(this.spead>chuot.spead){
+                this.say("bắt được rồi");
+                this.eat(chuot);
+
+            }else {
+                chuot.say("đố mày bắt được anh");
+            }
+        }
+
+    }
+    let jerry1 = new Rat("Terry",1,5,true);
+    let jerry2 = new Rat("Terry2",1,12,true);
+    let jerry3 = new Rat("Terry2",1,6,false);
+    let tom = new Cat("Tom",10,10);
+    tom.catch(jerry1);
+    tom.catch(jerry2);
+    tom.catch(jerry3);
+    console.log(tom.weight);
+</script>
+</body>
+</html>
