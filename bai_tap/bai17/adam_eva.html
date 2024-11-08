@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Apple {
+        constructor(weight) {
+            this.weight = weight;
+        }
+
+        setWeight(weight) {
+            this.weight = weight;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+    }
+
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setGender(gender) {
+            this.gender = gender;
+        }
+
+        getGender() {
+            return this.gender;
+        }
+
+        setWeight(weight) {
+            this.weight = weight;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        say(message) {
+            console.log("Nhân vật:  " + this.name + " giới tính " + this.gender + "  tạo ra với cân nặng  " + this.weight + " kg.");
+        }
+
+        check(apple) {
+            console.log("Khối lượng quả táo là: " + apple.weight)
+        }
+
+        eat(apple) {
+            if (apple.weight >= 1) {
+                this.say(this.name + " sẽ ăn táo");
+                this.weight += 1;
+                apple.weight -= 1;
+            } else {
+                this.say("Táo đã hết, không thể ăn thêm!");
+            }
+        }
+    }
+    let apple = new Apple(10);
+    let human1 = new Human("nhân", "nam", 50);
+
+    human1.eat(apple);
+
+    console.log(" Cân nặng của " + human1.name + " giới tính " + human1.gender + " sau khi ăn táo là: " + human1.weight);
+    console.log(" Trong lượng của táo còn lại sau khi bị ăn: " + apple.weight);
+</script>
+</body>
+</html>
