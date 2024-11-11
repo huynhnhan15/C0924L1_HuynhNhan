@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    let n = +prompt("Nhập vào dộd dài của  mảng");
+
+    let array = new  Array(n);
+    for (let i = 0; i < array.length; i++) {
+        array[i] = prompt(" nhập phần thử thứ: " + i);
+    }
+      let  ketqua = false;
+    for (let i = 0; i < array.length; i++) {
+        if (array[i + 1] - array[i] === array[i + 2] - array[i + 1]&& array[i]<array[i+1]) {
+            ketqua = true;
+        }
+    }
+    console.log(ketqua);
+
+</script>
+</body>
+</html>

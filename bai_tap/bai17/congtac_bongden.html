@@ -6,39 +6,31 @@
 </head>
 <body>
 <script>
-    class LopChung{
-        constructor(status) {
-            this.status = status;
+    class lamp {
+        constructor() {
+            this.status = false;
         }
-        setStatus(status){
-            this.status = status;
+
+        turnOn() {
+            this.status = true;
         }
-        getStatus(){
-            return this.status;
+
+        turnOff() {
+            this.status = false;
         }
     }
-    class CongTac extends LopChung{
-        constructor(status) {
-            super(status,lamp);
-            this.lamp = lamp;
+
+    class Swich {
+        constructor() {
+            this.switchStatus = false;
+            this.lamp = null;
         }
-       setLamp(lamp){
-            this.lamp = lamp;
-        }
-        getLamp(lamp){
-            return this.lamp;
-        }
-        switchButton(){
+        connectLamp(lamp){
+             
 
         }
-        connectToLamp(){
-
-        }
-
-
-
-
     }
+
 </script>
 </body>
 </html>
