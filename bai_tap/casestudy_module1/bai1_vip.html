@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // nhập n từ bàn phím ; nếu không thảo mãn thì phải nhập lại
+    let n;
+    do {
+        n = prompt("nhập độ dài");
+    } while (n <= 0 || n > 20 || n % 1 != 0);
+    // nhập mảng
+    let array = [];
+    // 5 điểm
+    for (let i = 0; i < n; i++) {
+        array.push(+prompt("nhập phần tử thứ : " + (i + 1)));
+    }
+    // hiển thị mảng sau khi nhập;
+    alert("mảng vừa nhập là : " + array);
+    // 15 điểm : kiểm tra mảng tăng dần đều
+    let diff = array[1]- array[0];
+    if (diff<=0||array.length<3){
+        alert("NOT")
+    }else {
+        let flag = true;
+        for (let i = 1; i <array.length-1 ; i++) {
+            if (array[i+1]-array[i]!==diff){
+                flag = false;
+                break;
+            }
+        }
+        // kết luận ok
+        if (flag){
+            alert("OK")
+        }else {
+            alert("NOT")
+        }
+    }
+
+</script>
+</body>
+</html>

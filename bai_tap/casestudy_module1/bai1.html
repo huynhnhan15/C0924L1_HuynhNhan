@@ -7,11 +7,18 @@
 <body>
 
 <script>
-    let n = +prompt("Nhập vào dộd dài của  mảng");
+    for (let i = 0; ; i++) {
+        let n = +prompt("Nhập vào dộd dài của  mảng");
+        if (n>20){
+            alert("nhập lại n");
+        }
+    }
+
 
     let array = new  Array(n);
     for (let i = 0; i < array.length; i++) {
         array[i] = prompt(" nhập phần thử thứ: " + i);
+        console.log(array[i]);
     }
       let  ketqua = false;
     for (let i = 0; i < array.length; i++) {

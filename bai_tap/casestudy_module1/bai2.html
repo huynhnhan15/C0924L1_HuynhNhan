@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function kiemTra(x, y, z) {
+
+        if (!isNaN(x) && !isNaN(y) && !isNaN(z)) {
+            if (x < 0 || y < 0 || z < 0 || x > y + z || y > x + z || z > x + y) {
+                alert("day khong phai  la tam giác");
+
+            } else if (x * x == y * y + z * z ||
+                y * y == x * x + z * z ||
+                z * z == x * x + y * y) {
+                alert("day la tam giac vuong");
+            } else {
+                alert("day là tam giác thường");
+            }
+
+        } else {
+            alert("Giá trị nhập vào chưa hợp lệ. Vui lòng nhập lại");
+
+        }
+
+    }
+
+    let a = +prompt("nhap canh x");
+    let b = +prompt("nhap canh y");
+    let c = +prompt("nhap canh z");
+    console.log(kiemTra(a, b, c));
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n;
+    do {
+        n = prompt("Nhập độ dài mảng: ");
+    }while (n <= 2 || n % 1 != 0);
+    let array = [];
+    for (let i = 0; i < n; i++) {
+        array.push(+prompt("Nhập phần tử thứ: " + (i + 1)));
+    }
+    alert("Mảng vừa nhập là: " + array);
+    check = true;
+    for (let i = 0; i < n / 2; i++) {
+        if (array[i] !== array[n - 1 - i]){
+            check = false;
+            break;
+        }
+    }
+    if (check) {
+        alert("OK");
+    } else {
+        alert("NO");
+    }
+</script>
+</body>
+</html>
