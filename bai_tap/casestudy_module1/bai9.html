@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>bai_9</title>
+</head>
+<body>
+<h1>bai_9</h1>
+<script>
+  let n = parseInt(prompt("Nhập độ dài của mảng :"));
+  if (n % 2 !== 0) {
+    alert("Vui lòng nhập số chẵn cho độ dài của mảng");
+  } else {
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+      let num = parseInt(prompt(`Nhập phần tử thứ ${i + 1}`));
+      arr.push(num);
+    }
+    console.log("Mảng sau khi nhập :", arr);
+  }
+
+  function checkPairs(arr) {
+    for (let i = 0; i < arr.length - 1; i += 2) {
+      if (arr[i] >= arr[i + 1]) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  if (checkPairs(arr)) {
+    alert("OK");
+  } else {
+    alert("NO");
+  }
+</script>
+</body>
+</html>

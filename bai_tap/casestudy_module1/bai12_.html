@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Xây dựng quản lý học viên - codegym</h1>
+<button onclick="them()">Thêm mới học viên</button>
+<button>sửa thông tin học viên</button>
+<button>Xóa học viên</button>
+<p id="result"></p>
+
+<script>
+    class Hocvien {
+        constructor(maHV, ten, lop, email, ngaySinh) {
+            this.maHV = maHV;
+            this.ten = ten;
+            this.lop = lop;
+            this.email = email;
+            this.ngaySinh = ngaySinh;
+        }
+    }
+
+    let hocVien1 = new Hocvien("HV-0001", "Nguyễn Thị C", "C1022G1", "nguyenthic@gmail.com", "01/01/2024");
+    let hocVien2 = new Hocvien("HV-0002", "Nguyễn Thị b", "C1022G1", "nguyenthic@gmail.com", "01/01/2024");
+    let hocVien3 = new Hocvien("HV-0003", "Nguyễn Thị c", "C1022G1", "nguyenthic@gmail.com", "01/01/2024");
+    let danhSachHV = [hocVien1, hocVien2, hocVien3];
+    bang()
+
+    function bang() {
+        let tableString = `<table border="1" style="border-collapse: collapse">
+                            <tr>
+                              <th>Mã học viên</th>
+                              <th>Tên</th>
+                              <th>Lớp</th>
+                              <th>Email</th>
+                              <th>Ngày Sinh</th>
+                            </tr>`;
+        for (let i = 0; i < danhSachHV.length; i++) {
+            tableString += `<tr>
+                        <td>${danhSachHV[i].maHV}</td>
+                        <td>${danhSachHV[i].ten}</td>
+                        <td>${danhSachHV[i].lop}</td>
+                        <td>${danhSachHV[i].email}</td>
+                        <td>${danhSachHV[i].ngaySinh}</td>
+                      </tr>`;
+
+        }
+        tableString += `</table>`
+        document.getElementById('result').innerHTML = tableString;
+
+    }
+
+    function them() {
+
+        let maHV = document.getElementById("maHV").value;
+        let ten = document.getElementById("ten").value;
+        let lop = document.getElementById("lop").value;
+        let email = document.getElementById("email").value;
+        let ngaySinh = document.getElementById("ngaySinh").value;
+        if (maHV != '' && ten != '' && lop != '' && email != '' && ngaySinh != '') {
+            let hocVienMoi = new Hocvien(maHV, ten, lop, email, ngaySinh0);
+            danhSachHV.push(hocVienMoi);
+
+        } else {
+            alert("yêu cầu nhập đầy đủ")
+        }
+        document.getElementById("maHV").value = '';
+        document.getElementById("ten").value = '';
+        document.getElementById("lop").value = '';
+        document.getElementById("email").value = '';
+        document.getElementById("ngaySinh").value = '';
+        bang();
+    }
+
+</script>
+</body>
+</html>

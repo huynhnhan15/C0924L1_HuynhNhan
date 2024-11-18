@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check hàm số nguyên</title>
+</head>
+<body>
+<script>
+    while (true) {
+        var n = +prompt("Nhập số hạng phần tử: ");
+        if (isNaN(n) || n % 1 !== 0 || n <= 0) {
+            alert("Lỗi cú pháp, vui lòng thử lại");
+        } else if (n > 20) {
+            alert("Lỗi yêu cầu đề, vui lòng thử lại");
+        } else {
+            break;
+        }
+    }
+    let arr = new Array(n);
+    for (let i = 0; i < arr.length; i++) {
+        while (true) {
+            arr[i] = +prompt("Nhập phần tử thứ " + (i + 1));
+            if (isNaN(arr[i]) || arr[i] % 1 !== 0) {
+                alert("Lỗi cú pháp, vui lòng thử lại");
+            } else {
+                break;
+            }
+        }
+    }
+    alert("Kết quả: " + checkHam(arr));
+
+    function checkHam(array) {
+        let checkLe = false;
+        let checkChan = false;
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] % 2 === 0) {
+                checkChan = true;
+            } else {
+                checkLe = true;
+            }
+            if (checkChan && checkLe) {
+                return -1;
+            }
+        }
+        return checkChan ? 1 : 0;
+    }
+</script>
+</body>
+</html>

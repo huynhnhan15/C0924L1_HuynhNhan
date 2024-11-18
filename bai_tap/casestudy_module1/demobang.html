@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h1>Xây dựng quản lý học viên - codegym</h1>
+<button onclick="them()">Thêm mới học viên</button>
+<button onclick="sua()">Sửa thông tin học viên</button>
+<button onclick="xoa()">Xóa học viên</button>
+
+<p>
+  Mã HV: <input type="text" id="maHV"><br>
+  Tên: <input type="text" id="ten"><br>
+  Lớp: <input type="text" id="lop"><br>
+  Email: <input type="text" id="email"><br>
+  Ngày Sinh: <input type="date" id="ngaySinh"><br>
+</p>
+
+<p id="result"></p>
+
+<script>
+  class Hocvien {
+    constructor(maHV, ten, lop, email, ngaySinh) {
+      this.maHV = maHV;
+      this.ten = ten;
+      this.lop = lop;
+      this.email = email;
+      this.ngaySinh = ngaySinh;
+    }
+  }
+
+  let hocVien1 = new Hocvien("HV-0001", "Nguyễn Thị C", "C1022G1", "nguyenthic@gmail.com", "2024-01-01");
+  let hocVien2 = new Hocvien("HV-0002", "Nguyễn Thị b", "C1022G1", "nguyenthic@gmail.com", "2024-01-01");
+  let hocVien3 = new Hocvien("HV-0003", "Nguyễn Thị c", "C1022G1", "nguyenthic@gmail.com", "2024-01-01");
+  let danhSachHV = [hocVien1, hocVien2, hocVien3];
+  bang();
+
+  function bang() {
+    let tableString = `<table border="1" style="border-collapse: collapse">
+                            <tr>
+                              <th>Mã học viên</th>
+                              <th>Tên</th>
+                              <th>Lớp</th>
+                              <th>Email</th>
+                              <th>Ngày Sinh</th>
+                            </tr>`;
+    for (let i = 0; i < danhSachHV.length; i++) {
+      tableString += `<tr>
+                        <td>${danhSachHV[i].maHV}</td>
+                        <td>${danhSachHV[i].ten}</td>
+                        <td>${danhSachHV[i].lop}</td>
+                        <td>${danhSachHV[i].email}</td>
+                        <td>${danhSachHV[i].ngaySinh}</td>
+                      </tr>`;
+    }
+    tableString += `</table>`;
+    document.getElementById('result').innerHTML = tableString;
+  }
+
+  function them() {
+    let maHV = document.getElementById("maHV").value;
+    let ten = document.getElementById("ten").value;
+    let lop = document.getElementById("lop").value;
+    let email = document.getElementById("email").value;
+    let ngaySinh = document.getElementById("ngaySinh").value;
+
+    if (maHV != '' && ten != '' && lop != '' && email != '' && ngaySinh != '') {
+      let hocVienMoi = new Hocvien(maHV, ten, lop, email, ngaySinh);
+      danhSachHV.push(hocVienMoi);
+    } else {
+      alert("Yêu cầu nhập đầy đủ thông tin");
+    }
+
+    document.getElementById("maHV").value = '';
+    document.getElementById("ten").value = '';
+    document.getElementById("lop").value = '';
+    document.getElementById("email").value = '';
+    document.getElementById("ngaySinh").value = '';
+    bang();
+  }
+
+  function sua() {
+    let maHV = prompt("Nhập mã học viên cần sửa:");
+    let hocVien = danhSachHV.find(hv => hv.maHV === maHV);
+
+    if (hocVien) {
+      hocVien.ten = prompt("Nhập tên mới:", hocVien.ten);
+      hocVien.lop = prompt("Nhập lớp mới:", hocVien.lop);
+      hocVien.email = prompt("Nhập email mới:", hocVien.email);
+      hocVien.ngaySinh = prompt("Nhập ngày sinh mới:", hocVien.ngaySinh);
+      bang();
+    } else {
+      alert("Không tìm thấy học viên với mã này.");
+    }
+  }
+
+  function xoa() {
+    let maHV = prompt("Nhập mã học viên cần xóa:");
+    let index = danhSachHV.findIndex(hv => hv.maHV === maHV);
+
+    if (index !== -1) {
+      danhSachHV.splice(index, 1);
+      bang();
+    } else {
+      alert("Không tìm thấy học viên với mã này.");
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CaseStudy_Bài 12</title>
+</head>
+<body>
+<h3>BÀI 12: XÂY DỰNG HỆ THỐNG QUẢN LÝ HỌC VIÊN - CODEGYM</h3>
+<p>
+    <button onclick="addStudent()">Thêm mới học viên</button>
+    <button onclick="editInfoStudent()">Sửa thông tin học viên</button>
+    <button onclick="deleteInfoStudent()">Xóa học viên</button>
+</p>
+<p id="result"></p>
+<script>
+    //xây dựng lớp học viên
+    class Student {
+        constructor(id, name, className, email, birthDay, module) {
+            this.id = id;
+            this.name = name;
+            this.className = className;
+            this.email = email;
+            this.birthDay = birthDay;
+            this.module = module;
+        }
+    }
+
+    //tạo đối tượng học viên từ class
+    let student1 = new Student(
+        "HV-0001",
+        "Nguyễn Văn A",
+        "C1022G1",
+        "nguyenvana@gmail.com",
+        "01/01/2004"
+    );
+    let student2 = new Student(
+        "HV-0002",
+        "Nguyễn Văn B",
+        "C1022G1",
+        "nguyenvanb@gmail.com",
+        "02/02/2004"
+    );
+    let student3 = new Student(
+        "HV-0003",
+        "Nguyễn Thị C",
+        "C1022G1",
+        "nguyenthic@gmail.com",
+        "03/03/2004"
+    );
+    let studentList = [student1, student2, student3];
+
+    //HIỂN THỊ bảng học viên
+    showTable();
+
+    function showTable() {
+        let tableString = ` <table border="1">
+        <tr>
+          <th>Mã học viên</th>
+          <th>Tên</th>
+          <th>Lớp</th>
+          <th>Email</th>
+          <th>Ngày sinh</th>
+        </tr>`;
+        for (let i = 0; i < studentList.length; i++) {
+            tableString += `<tr>
+          <td>${studentList[i].id}</td>
+          <td>${studentList[i].name}</td>
+          <td>${studentList[i].className}</td>
+          <td>${studentList[i].email}</td>
+          <td>${studentList[i].birthDay}</td>
+      </tr>`;
+        }
+        tableString += `</table>`;
+
+        document.getElementById("result").innerHTML = tableString;
+    }
+
+    //THÊM MỚI thông tin học viên
+    function addStudent() {
+        let conf = confirm(`Bạn muốn thêm mới học viên?`);
+        if (conf === true) {
+            let newID = prompt(`Nhập mã học viên`);
+            let newName = prompt(`Nhập tên học viên`);
+            let newClassName = prompt(`Nhập tên lớp của học viên`);
+            let newEmail = prompt(`Nhập email của học viên`);
+            let newBirthDay = prompt(`Nhập ngày sinh của học viên`);
+            if (
+                newID === "" ||
+                newName === "" ||
+                newClassName === "" ||
+                newEmail === "" ||
+                newBirthDay === ""
+            ) {
+                alert(`Không được để trống thông tin`);
+                return;
+            } else {
+                let newStudent = new Student(
+                    newID,
+                    newName,
+                    newClassName,
+                    newEmail,
+                    newBirthDay
+                );
+                studentList.push(newStudent);
+                showTable();
+            }
+        }
+    }
+
+    //ĐIỀU CHỈNH thông tin học viên
+    function editInfoStudent() {
+        let conf = confirm(`Bạn muốn điều chỉnh thông tin hoc viên? `);
+        if (conf === true) {
+            let checkID = prompt(`Nhập mã học viên cần điều chỉnh`);
+
+            let found = false;
+            for (let student of studentList) {
+                if (student.id === checkID) {
+                    student.id = prompt(`Nhập mã học viên `);
+                    student.name = prompt(`Nhập tên học viên`);
+                    student.className = prompt(`Nhập lớp của học viên `);
+                    student.email = prompt(`Nhập email của học viên`);
+                    student.birthDay = prompt(`Nhập ngày sinh học viên`);
+                    if (
+                        student.id === "" ||
+                        student.name === "" ||
+                        student.className === "" ||
+                        student.email === "" ||
+                        student.birthDay === ""
+                    ) {
+                        alert(`Không được để trống thông tin`);
+                        break;
+                    }
+                    found = true;
+                    showTable();
+                    break;
+                }
+            }
+            if (!found) {
+                alert(`Không tồn tại mã sinh viên`);
+            }
+        }
+    }
+
+    //XÓA thông tin học viên
+    function deleteInfoStudent() {
+        let conf = confirm(`Bạn muốn xóa thông tin hoc viên? `);
+        if (conf === true) {
+            let checkID = prompt(`Nhập mã học viên cần xóa`);
+            let isDelete = false;
+            for (let i = 0; i < studentList.length; i++) {
+                if (studentList[i].id === checkID) {
+                    studentList.splice(i, 1);
+                    showTable();
+                    isDelete = true;
+                    break;
+                }
+            }
+            if (!isDelete) {
+                alert(`Không tồn tại mã sinh viên`);
+            }
+        }
+    }
+</script>
+</body>
+</html>
