@@ -8,7 +8,7 @@
 <h2>Quản lý Công nhân</h2>
 <p id="result"></p>
 <script>
-    class Nhanvien {
+    class Congnhan {
         constructor(stt, hoTen, ngaySinh, diaChi, luong, chucVu) {
             this.stt = stt;
             this.hoTen = hoTen;
@@ -19,11 +19,11 @@
         }
     }
 
-    let nhanVien1 = new Nhanvien(1, "Trương Tấn A", "11-11-1997", "Quảng Nam", 2000, "Abc");
-    let nhanVien2 = new Nhanvien(2, "Trương Tấn B", "11-11-1998", "Đà Nẵng", 2000, "Abc");
-    let nhanVien3 = new Nhanvien(3, "Trương Tấn C", "11-11-1999", "Huế", 2000, "Abc");
-    let danhSachNV = [nhanVien1, nhanVien2, nhanVien3];
-    danhSachNV.sort((a, b) => {
+    let Congnhan1 = new Congnhan(1, "Trương Tấn A", "11-11-1997", "Quảng Nam", 2000, "Abc");
+    let Congnhan2 = new Congnhan(2, "Trương Tấn B", "11-11-1998", "Đà Nẵng", 2000, "Abc");
+    let Congnhan3 = new Congnhan(3, "Trương Tấn C", "11-11-1999", "Huế", 2000, "Abc");
+    let danhSachCN = [Congnhan1, Congnhan2, Congnhan3];
+    danhSachCN.sort((a, b) => {
         return a.hoTen.localeCompare(b.hoTen);
     });
     bang();
@@ -38,14 +38,14 @@
                               <th>Chức vụ</th>
                             </tr>
                         `;
-        for (let i = 0; i < danhSachNV.length; i++) {
+        for (let i = 0; i < danhSachCN.length; i++) {
             tableString += ` <tr>
-                          <td>${danhSachNV[i].stt}</td>
-                          <td>${danhSachNV[i].hoTen}</td>
-                          <td>${danhSachNV[i].ngaySinh}</td>
-                          <td>${danhSachNV[i].diaChi}</td>
-                          <td>${danhSachNV[i].luong}</td>
-                          <td>${danhSachNV[i].chucVu}</td>
+                          <td>${danhSachCN[i].stt}</td>
+                          <td>${danhSachCN[i].hoTen}</td>
+                          <td>${danhSachCN[i].ngaySinh}</td>
+                          <td>${danhSachCN[i].diaChi}</td>
+                          <td>${danhSachCN[i].luong}</td>
+                          <td>${danhSachCN[i].chucVu}</td>
                         </tr>`;
 
         }
