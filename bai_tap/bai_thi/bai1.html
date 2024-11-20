@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n;
+    do {
+        n = prompt("nhập độ dài");
+    } while (n <= 0 || n > 50 || n % 1 != 0);
+    let array = [];
+    for (let i = 0; i < n; i++) {
+        array.push(+prompt("nhập phần tử thứ : " + (i + 1)));
+    }
+    alert("mảng vừa nhập là : " + array);
+
+    function kiemTra() {
+        let sum = 0;
+        let count = 0;
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] % 3 === 0) {
+                sum += array[i];
+                count++;
+            }
+        }
+        if (count === 0) {
+            alert("Không có số nào trong mảng chia hết cho 3.");
+            return;
+        }
+        let kq = sum / count;
+        alert("Trung bình cộng các số chia hết cho 3 là: " + kq);
+    }
+
+    // Gọi hàm kiemTra sau khi đã nhập mảng
+    kiemTra();
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Quản lý Công nhân</h2>
+<p id="result"></p>
+<script>
+    class Nhanvien {
+        constructor(stt, hoTen, ngaySinh, diaChi, luong, chucVu) {
+            this.stt = stt;
+            this.hoTen = hoTen;
+            this.ngaySinh = ngaySinh;
+            this.diaChi = diaChi;
+            this.luong = luong;
+            this.chucVu = chucVu;
+        }
+    }
+
+    let nhanVien1 = new Nhanvien(1, "Trương Tấn A", "11-11-1997", "Quảng Nam", 2000, "Abc");
+    let nhanVien2 = new Nhanvien(2, "Trương Tấn B", "11-11-1998", "Đà Nẵng", 2000, "Abc");
+    let nhanVien3 = new Nhanvien(3, "Trương Tấn C", "11-11-1999", "Huế", 2000, "Abc");
+    let danhSachNV = [nhanVien1, nhanVien2, nhanVien3];
+    danhSachNV.sort((a, b) => {
+        return a.hoTen.localeCompare(b.hoTen);
+    });
+    bang();
+    function bang() {
+        let tableString = `<table border="1"  style="border-collapse: collapse">
+                            <tr>
+                              <th>STT</th>
+                              <th>Họ và tên</th>
+                              <th>Ngày sinh</th>
+                              <th>Địa chỉ</th>
+                              <th>Lương</th>
+                              <th>Chức vụ</th>
+                            </tr>
+                        `;
+        for (let i = 0; i < danhSachNV.length; i++) {
+            tableString += ` <tr>
+                          <td>${danhSachNV[i].stt}</td>
+                          <td>${danhSachNV[i].hoTen}</td>
+                          <td>${danhSachNV[i].ngaySinh}</td>
+                          <td>${danhSachNV[i].diaChi}</td>
+                          <td>${danhSachNV[i].luong}</td>
+                          <td>${danhSachNV[i].chucVu}</td>
+                        </tr>`;
+
+        }
+        tableString += `</table>`;
+        document.getElementById('result').innerHTML = tableString;
+    }
+</script>
+</body>
+</html>

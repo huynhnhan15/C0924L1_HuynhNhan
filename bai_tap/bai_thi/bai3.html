@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function isLeapYear(year) {
+        return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+    }
+
+    let month, year;
+
+    do {
+        month = +prompt("Nhập tháng (1-12):");
+        if (month < 1 || month > 12) {
+            alert("Tháng không hợp lệ, vui lòng nhập lại.");
+        }
+    } while (month < 1 || month > 12);
+
+    do {
+        year = +prompt("Nhập năm:");
+        if (isNaN(year) || year <= 0) {
+            alert("Năm không hợp lệ, vui lòng nhập lại.");
+        }
+    } while (isNaN(year) || year <= 0);
+
+    switch (month) {
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            alert("Tháng này có 31 ngày");
+            break;
+        case 2:
+            if (isLeapYear(year)) {
+                alert("Tháng 2 có 29 ngày (năm nhuận)");
+            } else {
+                alert("Tháng 2 có 28 ngày");
+            }
+            break;
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            alert("Tháng này có 30 ngày");
+            break;
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="themHV()">thêm mới học viên</button>
+<button onclick="suaHV()">Sửa thông tin học viên</button>
+<button>xóa học viên</button>
+<p id="result"></p>
+<script>
+    class Hocvien {
+        constructor(ma, ten, lop, email, ngaySinh) {
+            this.ma = ma;
+            this.ten = ten;
+            this.lop = lop;
+            this.email = email;
+            this.ngaySinh = ngaySinh;
+        }
+    }
+
+    let Hv1 = new Hocvien("HV-0001", "Huỳnh Nhân", "CS0010", "nhanhuuynh@gmaiil.com", "15/04/2003");
+    let Hv2 = new Hocvien("HV-0002", "Huỳnh Nhân", "CS0010", "nhanhuuynh@gmaiil.com", "15/04/2003");
+    let Hv3 = new Hocvien("HV-0003", "Huỳnh Nhân", "CS0010", "nhanhuuynh@gmaiil.com", "15/04/2003");
+    let danhSach = [Hv1, Hv2, Hv3];
+
+    function themHV() {
+        let conf = confirm(`Bạn muốn thêm mới học viên?`);
+        if (conf === true) {
+            let newMa = prompt(`Nhập mã học viên`);
+            let newTen = prompt(`Nhập tên học viên`);
+            let newLop = prompt(`Nhập tên lớp của học viên`);
+            let newEmail = prompt(`Nhập email của học viên`);
+            let newNgaySinh = prompt(`Nhập ngày sinh của học viên`);
+            if (
+                newMa === "" ||
+                newTen === "" ||
+                newLop === "" ||
+                newEmail === "" ||
+                newNgaySinh === ""
+            ) {
+                alert(`Không được để trống thông tin`);
+                return;
+            } else {
+                let newDanhSach = new Hocvien(
+                    newMa,
+                    newTen,
+                    newLop,
+                    newEmail,
+                    newNgaySinh,
+                );
+                danhSach.push(newDanhSach);
+                bang();
+            }
+        }
+    }
+
+    function suaHV() {
+        let conf = confirm(`Bạn muốn điều chỉnh thông tin hoc viên? `);
+        if (conf === true) {
+            let checkID = prompt(`Nhập mã học viên cần điều chỉnh`);
+
+            let found = false;
+            for (let Hocvien of danhSach) {
+                if (Hocvien.ma === checkID) {
+                    Hocvien.ma = prompt(`Nhập mã học viên `);
+                    Hocvien.ten = prompt(`Nhập tên học viên`);
+                    Hocvien.lop = prompt(`Nhập lớp của học viên `);
+                    Hocvien.email = prompt(`Nhập email của học viên`);
+                    Hocvien.ngaySinh = prompt(`Nhập ngày sinh học viên`);
+                    if (
+                        Hocvien.ma === "" ||
+                        Hocvien.ten === "" ||
+                        Hocvien.lop === "" ||
+                        Hocvien.email === "" ||
+                        Hocvien.ngaySinh === ""
+                    ) {
+                        alert(`Không được để trống thông tin`);
+                        break;
+                    }
+                    found = true;
+                    bang();
+                    break;
+                }
+            }
+            if (!found) {
+                alert(`Không tồn tại mã sinh viên`);
+            }
+        }
+    }
+
+    function xoa() {
+        let conf = confirm(`Bạn muốn xóa thông tin hoc viên? `);
+        if (conf === true) {
+            let checkID = prompt(`Nhập mã học viên cần xóa`);
+            let isDelete = false;
+            for (let i = 0; i < danhSach.length; i++) {
+                if (danhSach[i].ma === checkID) {
+                    danhSach.splice(i, 1);
+                    bang();
+                    isDelete = true;
+                    break;
+                }
+            }
+            if (!isDelete) {
+                alert(`Không tồn tại mã sinh viên`);
+            }
+        }
+    }
+
+    bang();
+
+    function bang() {
+        let tableString = `<table border="1" style="border-collapse: collapse">
+                          <tr>
+                            <th>Mã học viên</th>
+                            <th>Tên</th>
+                            <th>Lớp</th>
+                            <th>Email</th>
+                            <th>Ngày Sinh</th>
+                          </tr>`
+        for (let i = 0; i < danhSach.length; i++) {
+            tableString += `<tr>
+                            <td>${danhSach[i].ma}</td>
+                            <td>${danhSach[i].ten}</td>
+                            <td>${danhSach[i].lop}</td>
+                            <td>${danhSach[i].email}</td>
+                            <td>${danhSach[i].ngaySinh}</td>
+                          </tr>`
+        }
+        tableString += `</table>`;
+        document.getElementById('result').innerHTML = tableString;
+    }
+</script>
+</body>
+</html>
